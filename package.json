@@ -1,26 +1,38 @@
 {
-    "name" : "scriptie-talkie-embed",
-    "version" : "0.0.0",
-    "description" : "Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.",
-    "main" : "scriptie-talkie-embed.js",
-    "scripts" : {
-        "test" : "node-trap test/*.js"
-    },
-    "repository" : {
-        "type" : "git",
-        "url" : "git://github.com/thlorenz/scriptie-talkie-embed.git"
-    },
-    "homepage" : "https://github.com/thlorenz/scriptie-talkie-embed",
-    "dependencies" : {
-    },
-    "devDependencies" : {
-    },
-    "keywords": ["scriptie-talkie", "sample", "interactive", "blog", "post", "evaluate", "snippet"] ,
-    "author" : {
-        "name" : "Thorsten Lorenz",
-        "email" : "thlorenz@gmx.de",
-        "url" : "http://thlorenz.com"
-    },
-    "license" : "MIT",
-    "engine" : { "node" : ">=0.6" }
+  "name": "scriptie-talkie-embed",
+  "version": "0.0.0",
+  "description": "Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.",
+  "main": "scriptie-talkie-embed.js",
+  "scripts": {
+    "test": "node-trap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/scriptie-talkie-embed.git"
+  },
+  "homepage": "https://github.com/thlorenz/scriptie-talkie-embed",
+  "dependencies": {
+    "debounce": "0.0.2",
+    "hypernal": "~0.1.1",
+    "scriptie-talkie": "~0.4.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "scriptie-talkie",
+    "sample",
+    "interactive",
+    "blog",
+    "post",
+    "evaluate",
+    "snippet"
+  ],
+  "author": {
+    "name": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6"
+  }
 }
