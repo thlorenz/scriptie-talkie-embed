@@ -1,12 +1,29 @@
-textarea {
+textarea.scriptie-talkie {
   display: none;
 }
 
-.ace_editor {
-  width: 500px;
-  height: 500px;
+.scriptie-talkie-editor,
+.scriptie-talkie-terminal {
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  width: 50%;
 }
 
-.ace_editor > textarea {
-  display: block;
+.scriptie-talkie-editor {
+  left: 0;
+  right: 50%;
+}
+
+.scriptie-talkie-terminal {
+  padding-left: 10px;
+  padding-top: 5px;
+  background    :  black;
+  font-size     :  14px;
+  font-family   :  Terminus,Consolas,Profont,Monaco,Inconsolata,Inconsolata-g,
+      Unifont,Lime,"ClearlyU PUA",Clean,"DejaVu Sans Mono","Lucida Console",
+      "Bitstream Vera Sans Mono",Freemono,"Liberation Mono",Dina,Anka,Droid Sans Mono,
+      Anonymous Pro,Proggy fonts,Envy Code R,Gamow,Courier,"Courier New",Terminal,monospace;
+  right: 0;
+  left: 50%;
 }
