@@ -4,7 +4,7 @@
   "description": "Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.",
   "main": "scriptie-talkie-embed.js",
   "scripts": {
-    "test": "node-trap test/*.js"
+    "test": "tape test/*.js && jshint {*.js,lib/*.js,test/*.js}"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,10 @@
     "hypernal": "~0.1.1",
     "scriptie-talkie": "~0.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "~0.3.3",
+    "jshint": "~1.1.0"
+  },
   "keywords": [
     "scriptie-talkie",
     "sample",
