@@ -30,3 +30,10 @@ textarea.scriptie-talkie {
   left: 50%;
   padding-left: 5px;
 }
+
+/* tweak the ace editor a bit since we'll never have >99 lines and need to save space */
+.scriptie-talkie-editor .ace_gutter-cell ,
+.scriptie-talkie-editor .ace_folding-enabled > .ace_gutter-cell { 
+  padding-left: 5px;
+  padding-right: 5px;
+}
