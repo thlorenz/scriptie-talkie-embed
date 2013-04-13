@@ -19,8 +19,6 @@ textarea.scriptie-talkie {
 }
 
 .scriptie-talkie-terminal {
-  padding-left: 10px;
-  padding-top: 5px;
   background    :  black;
   font-size     :  12px;
   font-family   :  Terminus,Consolas,Profont,Monaco,Inconsolata,Inconsolata-g,
@@ -29,4 +27,5 @@ textarea.scriptie-talkie {
       Anonymous Pro,Proggy fonts,Envy Code R,Gamow,Courier,"Courier New",Terminal,monospace;
   right: 0;
   left: 50%;
+  padding-left: 5px;
 }
