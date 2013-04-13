@@ -1,5 +1,7 @@
 textarea.scriptie-talkie {
-  display: none;
+  display: block;
+  margin: 20px;
+  width: 500px;
 }
 
 .scriptie-talkie-editor,
@@ -7,6 +9,7 @@ textarea.scriptie-talkie {
   position: absolute;
   top: 5px;
   bottom: 0;
+  height: 100%;
   width: 50%;
 }
 
