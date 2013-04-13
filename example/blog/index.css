@@ -1,7 +1,7 @@
 textarea.scriptie-talkie {
   display: block;
   margin: 20px;
-  width: 500px;
+  width: 600px;
 }
 
 .scriptie-talkie-editor,
@@ -22,7 +22,7 @@ textarea.scriptie-talkie {
   padding-left: 10px;
   padding-top: 5px;
   background    :  black;
-  font-size     :  14px;
+  font-size     :  12px;
   font-family   :  Terminus,Consolas,Profont,Monaco,Inconsolata,Inconsolata-g,
       Unifont,Lime,"ClearlyU PUA",Clean,"DejaVu Sans Mono","Lucida Console",
       "Bitstream Vera Sans Mono",Freemono,"Liberation Mono",Dina,Anka,Droid Sans Mono,

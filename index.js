@@ -1,8 +1,8 @@
 'use strict';
 
-var loadAce         =  require('./lib/load-ace')
+var debounce        =  require('debounce')
+  , loadAce         =  require('./lib/load-ace')
   , normalizeIndent =  require('./lib/normalize-indent')
-  , debounce        =  require('debounce')
   , createContainer =  require('./lib/create-container')
   , createEditor    =  require('./lib/create-editor')
   , createTerminal  =  require('./lib/create-terminal')
