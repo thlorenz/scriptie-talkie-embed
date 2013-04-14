@@ -47,6 +47,7 @@ function talkify(textareas) {
     //  width: override
     //  height: override
     //  maxheight: override
+    //  sizeToTerminal: true -- in that case set rows to scriptie-talkie result and adjust embed height from there
     
     editor.on('change', debounce(evaluate, 400, false));
     editor.clearSelection();

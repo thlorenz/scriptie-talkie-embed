@@ -1,8 +1,11 @@
 textarea.scriptie-talkie {
-  /*visibility: hidden;*/
+  visibility: hidden;
   display :  block;
-  margin  :  20px;
-  width   :  600px;
+}
+
+.scriptie-talkie-container {
+  position: relative; 
+  margin: 10px 0px;
 }
 
 .scriptie-talkie-editor,
