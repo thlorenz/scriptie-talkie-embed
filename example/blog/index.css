@@ -1,5 +1,6 @@
 textarea.scriptie-talkie {
   width: 790px;
+  visibility: hidden;
 }
 
 .scriptie-talkie-container {
