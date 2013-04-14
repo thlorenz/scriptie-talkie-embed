@@ -1,13 +1,14 @@
 'use strict';
 
-var debounce        =  require('debounce')
-  , loadAce         =  require('./lib/load-ace')
-  , prepareTextarea =  require('./lib/prepare-textarea')
-  , createContainer =  require('./lib/create-container')
-  , createEditor    =  require('./lib/create-editor')
-  , createTerminal  =  require('./lib/create-terminal')
-  , evaluateScript  =  require('./lib/evaluate-script')
-  , loadStyles      =  require('./lib/load-styles')
+var debounce          =  require('debounce')
+  , loadAce           =  require('./lib/load-ace')
+  , getTextareaConfig =  require('./lib/get-textarea-config')
+  , prepareTextarea   =  require('./lib/prepare-textarea')
+  , createContainer   =  require('./lib/create-container')
+  , createEditor      =  require('./lib/create-editor')
+  , createTerminal    =  require('./lib/create-terminal')
+  , evaluateScript    =  require('./lib/evaluate-script')
+  , loadStyles        =  require('./lib/load-styles')
   ;
 
 function harvest(scripties) {
@@ -29,6 +30,9 @@ function talkify(textareas) {
 
     prepareTextarea(textarea, -3);
 
+    var config = getTextareaConfig(textarea);
+    console.log('config: ', config);
+    
     var container         =  createContainer(textarea);
     var term              =  createTerminal(container, 'scriptie-talkie-terminal-' + idx)
       , terminal          =  term.terminal
