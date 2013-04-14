@@ -40,7 +40,16 @@ function talkify(textareas) {
       evaluateScript(editor.getValue(), terminal.writeln.bind(terminal));
     }
 
+    // TODO: at this point we could pull out some info from the textarea
+    // i.e. from a data-scriptie-talkie attribute, could be a stringified object with options
+    // the following options make sense:
+    //  readonly: true|false
+    //  width: override
+    //  height: override
+    //  maxheight: override
+    
     editor.on('change', debounce(evaluate, 400, false));
+    editor.clearSelection();
     evaluate();
   });
 }
