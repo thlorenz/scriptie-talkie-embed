@@ -1,4 +1,17 @@
+textarea.scriptie-talkie {
+  width: 790px;
+}
+
 .scriptie-talkie-container {
   border: 3px solid #504D4D;
   border-radius: 5px;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+  background: antiquewhite;
+  padding: 20px;
+  border: solid 2px antiquewhite; 
+  border-radius: 15px;
 }
