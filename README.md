@@ -8,7 +8,8 @@ A good idea is to look at the [example
 implementation](https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog) and to [see the resulting
 page](http://thlorenz.github.io/scriptie-talkie-embed/).
 
-Getting this to work comes down to a few single steps.
+All the work is done client side. All you need to do is to follow the simple steps below to properly include
+your code samples and the scriptie talkie JavaScript file itself.
 
 ### Include code inside html
 
