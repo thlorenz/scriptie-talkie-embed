@@ -429,3 +429,15 @@ Small Device Styles
   }
 
 }
+
+/* scriptie-talkie-embed specific */
+
+textarea.scriptie-talkie {
+  width: 790px;
+  visibility: hidden;
+}
+
+.scriptie-talkie-container {
+  border: 3px solid #504D4D;
+  border-radius: 5px;
+}

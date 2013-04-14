@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Scriptie-talkie-embed : Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples." />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="./.gh-pages/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./gh-pages/css/stylesheet.css">
 
     <title>Scriptie-talkie-embed</title>
   </head>
@@ -30,6 +30,70 @@
 
 <p>Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.</p>
 
+    <h2>blog post example</h2>
+    <a href="https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog">source of this example</a>
+
+    <p>By default the size will be determined to fit most of the terminal on the right inside the embedded scriptie-talkie</p>
+    <textarea class="scriptie-talkie">
+      var a = 3
+        , b = 2;
+
+      var c = ++a + b;
+
+      var d = 3
+        , e = 2;
+
+      var f = ++d + e;
+
+      var d = 3
+        , e = 2;
+
+      var f = d++ + e; 
+
+      function foo() {
+        return a + b + c + d + e + f;
+      }
+
+      var z = foo();
+      z++;
+    </textarea>
+
+    <p>
+      However you may also size it to just fit the editor on the left by setting the <code>data-scriptie-talkie</code> 
+      attribute to <code>{ sizeToEditor: true }</code>.
+      Readers can scroll the terminal up and down with the mouse and edit the code to experiment with it.
+    </p>
+    <textarea class="scriptie-talkie" data-scriptie-talkie="{ sizeToEditor: true }">
+      var a = 3
+        , b = 2;
+
+      var c = ++a + b;
+
+      var d = 3
+        , e = 2;
+
+      var f = ++d + e;
+
+      var d = 3
+        , e = 2;
+
+      var f = d++ + e; 
+
+      function foo() {
+        return a + b + c + d + e + f;
+      }
+
+      var z = foo();
+      z++;
+    </textarea>
+    <p>Use it to demonstrate interesting aspects of JavaScript, i.e. <code>Object.freeze</code></p>
+    <textarea class="scriptie-talkie">
+      var o = Object.create({a : 1})
+      o.a = 2;
+      Object.freeze(o)
+      o.a = 1; 
+      o
+    </textarea>
 <h2>How does this work</h2>
 
 <p>A good idea is to look at the <a href="https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog">example
@@ -116,7 +180,6 @@ example again and this time add this customization:</p>
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
-
   </body>
+  <script type="text/javascript" src="./gh-pages/bundle.js"></script>
 </html>
