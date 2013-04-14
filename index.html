@@ -118,9 +118,13 @@ your code samples and the scriptie talkie JavaScript file itself.
 <span class="nt">&lt;/textarea&gt;</span>
 </pre></div>
 
-<h3>Activate scriptie-talkie</h3>
+<h3>
+<a name="activate-scriptie-talkie" class="anchor" href="#activate-scriptie-talkie"><span class="mini-icon mini-icon-link"></span></a>Activate scriptie-talkie</h3>
 
-<p>At this point you will need <a href="https://github.com/substack/node-browserify">browserify</a> in order to include scriptie-talkie in
+<h3>
+<a name="browserify" class="anchor" href="#browserify"><span class="mini-icon mini-icon-link"></span></a>browserify</h3>
+
+<p>It is recommended to use <a href="https://github.com/substack/node-browserify">browserify</a> in order to include scriptie-talkie in
 your bundle.</p>
 
 <p>So lets assume you have a build script that specifies <code>main.js</code> as an entry, all you'd need to do there is:</p>
@@ -133,6 +137,18 @@ your bundle.</p>
 as in the example I mentioned above.</p>
 
 <p>It will then go and convert all your customized <code>textarea</code>s into scriptie-talkies.</p>
+
+<h4>
+<a name="script-tag" class="anchor" href="#script-tag"><span class="mini-icon mini-icon-link"></span></a>script tag</h4>
+
+<p>Alternatively you can include the following script tag in the body of your html file followed by an inline script that activates
+scriptie-talkie:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://github.com/thlorenz/scriptie-talkie-embed/raw/gh-pages/gh-pages/bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">scriptieTalkieEmbed</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <h3>Customize each scriptie-talkie</h3>
 
