@@ -9,21 +9,20 @@
 
   <h2>scriptie-talkie embed blog post</h2>
 
-  <textarea class="scriptie-talkie" data-scriptie-talkie="{ sizeToTerminal: true }">
-    var a = 3
-      , b = 2;
+  <textarea class="scriptie-talkie">
+    var o = Object.create({a : 1})
+    o.a = 2;
+    Object.freeze(o)
+    o.a = 1; 
+    o
+  </textarea>
 
-    var c = ++a + b;
-
-    var a = 3
-      , b = 2;
-
-    var c = ++a + b;
-
-    var a = 3
-      , b = 2;
-
-    var c = ++a + b; 
+  <textarea class="scriptie-talkie" data-scriptie-talkie="{ sizeToEditor: true }">
+    var o = Object.create({a : 1})
+    o.a = 2;
+    Object.freeze(o)
+    o.a = 1; 
+    o
   </textarea>
 
   <textarea class="scriptie-talkie">
@@ -31,6 +30,29 @@
       , b = 2;
 
     var c = ++a + b; 
+  </textarea>
+
+  <textarea class="scriptie-talkie" data-scriptie-talkie="{ sizeToEditor: false }">
+    var a = 3
+      , b = 2;
+
+    var c = ++a + b;
+
+    var a = 3
+      , b = 2;
+
+    var c = ++a + b;
+
+    var a = 3
+      , b = 2;
+
+    var c = ++a + b; 
+    function foo() {
+      return c + a + b;
+    }
+
+    var z = foo();
+    z++;
   </textarea>
   
 </body>

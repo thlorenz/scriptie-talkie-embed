@@ -23,39 +23,57 @@ function harvest(scripties) {
   return res;
 }
 
+function sizeTerminalToRowsAndAdjust(container, lines) {
+  var evaluatedLines = evaluateScript(lines.join('\n'));
+
+  // tweaking a bit since for larger row numbers terminal wasn't big enough
+  // TODO: this tweak isn't working perfectly at all times
+  var rows = Math.round(evaluatedLines.length * 1.25 + 2);
+  var term = createTerminal(container, { rows: rows });
+  console.log('evaluatedLines.length: ', evaluatedLines.length);
+  
+  console.log('rows: ', rows);
+  
+  container.style.height = term.height + 'px';
+  return term;
+}
 
 function talkify(textareas) {
   loadStyles();
+
   textareas.forEach(function(textarea, idx) {
+    var lines     =  prepareTextarea(textarea, -3)
+      , config    =  getTextareaConfig(textarea)
+      , container =  createContainer(textarea)
+      , term;
 
-    prepareTextarea(textarea, -3);
+    //  FUTURE: extra config
+    //  readonly  :  true|false
+    //  width     :  override
+    //  height    :  override
+    //  maxheight :  override
 
-    var config            =  getTextareaConfig(textarea);
-    var container         =  createContainer(textarea);
-    var term              =  createTerminal(container, config)
-      , terminal          =  term.terminal
-      , terminalContainer =  term.container;
-    var edit              =  createEditor(container, textarea.textContent, config)
-      , editor            =  edit.editor
-      , editorContainer   =  edit.container;
+    if (!config.sizeToEditor) {
+      term = sizeTerminalToRowsAndAdjust(container, lines);
+    } else {
+      term = createTerminal(container);
+    }
+
+    var edit     =  createEditor(container, textarea.textContent, config)
+      , terminal =  term.terminal
+      , editor   =  edit.editor;
 
     function evaluate() {
       terminal.reset();
       evaluateScript(editor.getValue(), terminal.writeln.bind(terminal));
     }
-
-    // TODO: at this point we could pull out some info from the textarea
-    // i.e. from a data-scriptie-talkie attribute, could be a stringified object with options
-    // the following options make sense:
-    //  readonly: true|false
-    //  width: override
-    //  height: override
-    //  maxheight: override
-    //  sizeToTerminal: true -- in that case set rows to scriptie-talkie result and adjust embed height from there
     
     editor.on('change', debounce(evaluate, 400, false));
     editor.clearSelection();
     evaluate();
+
+    // scroll to top
+    terminal.term.scrollDisp(-9999);
   });
 }
 
