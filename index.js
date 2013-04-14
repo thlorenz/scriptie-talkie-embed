@@ -30,14 +30,12 @@ function talkify(textareas) {
 
     prepareTextarea(textarea, -3);
 
-    var config = getTextareaConfig(textarea);
-    console.log('config: ', config);
-    
+    var config            =  getTextareaConfig(textarea);
     var container         =  createContainer(textarea);
-    var term              =  createTerminal(container, 'scriptie-talkie-terminal-' + idx)
+    var term              =  createTerminal(container, config)
       , terminal          =  term.terminal
       , terminalContainer =  term.container;
-    var edit              =  createEditor(container, textarea.textContent, 'scriptie-talkie-ace-editor-' + idx)
+    var edit              =  createEditor(container, textarea.textContent, config)
       , editor            =  edit.editor
       , editorContainer   =  edit.container;
 
