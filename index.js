@@ -85,3 +85,6 @@ module.exports = function () {
   // only load ace editor if we found elements in the page that want to talk
   loadAce(talkify.bind(null, textareas));
 };
+
+// For all the people who are still not using browserify
+window.scriptieTalkieEmbed = module.exports;

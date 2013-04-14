@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title></title>
+  <link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
+</head>
+<body>
+  
+  <div class="wrapper">
+    <h2>condensed scriptie-talkie-embed example</h2>
+    <p>
+      This demonstrates that you can use scriptie-talkie via a simple <code>&lt;script src=".."&gt;</code> although I highly recommend to use 
+      browserify instead.
+    </p>
+      
+    <textarea class="scriptie-talkie">
+      var a = "100" + 1; 
+      var useBrowserifyNextTime = (a % 1000) == true;
+    </textarea>
+  </div>
+
+  <script type="text/javascript" src="https://github.com/thlorenz/scriptie-talkie-embed/raw/gh-pages/gh-pages/bundle.js"></script>
+  <script type="text/javascript">
+    window.scriptieTalkieEmbed();
+  </script>
+</body>
+</html>

@@ -27,7 +27,9 @@ Any `textarea` with class `scriptie-talkie` will be converted into a scriptie-ta
 
 ### Activate scriptie-talkie
 
-At this point you will need [browserify](https://github.com/substack/node-browserify) in order to include scriptie-talkie in
+### browserify
+
+It is recommended to use [browserify](https://github.com/substack/node-browserify) in order to include scriptie-talkie in
 your bundle.
 
 So lets assume you have a build script that specifies `main.js` as an entry, all you'd need to do there is:
@@ -41,6 +43,18 @@ Make sure to execute the last line only once the page has loaded or just include
 as in the example I mentioned above.
 
 It will then go and convert all your customized `textarea`s into scriptie-talkies.
+
+#### script tag
+
+Alternatively you can include the following script tag in the body of your html file followed by an inline script that activates
+scriptie-talkie:
+
+```html
+<script type="text/javascript" src="https://github.com/thlorenz/scriptie-talkie-embed/raw/gh-pages/gh-pages/bundle.js"></script>
+<script type="text/javascript">
+  window.scriptieTalkieEmbed();
+</script>
+```
 
 ### Customize each scriptie-talkie
 
