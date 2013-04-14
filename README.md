@@ -12,8 +12,7 @@ Getting this to work comes down to a few single steps.
 
 ### Include code inside html
 
-Any `textarea` with class `scriptie-talkie` will be converted into a scriptie-talkie, so the below is the minimum you
-need.
+Any `textarea` with class `scriptie-talkie` will be converted into a scriptie-talkie, so this is the minimum you need:
 
 ```html
 <textarea class="scriptie-talkie">
@@ -27,7 +26,7 @@ need.
 
 ### Activate scriptie-talkie
 
-At this point you will need [browserify](https://github.com/substack/browserify) in order to include scriptie-talkie in
+At this point you will need [browserify](https://github.com/substack/node-browserify) in order to include scriptie-talkie in
 your bundle.
 
 So lets assume you have a build script that specifies `main.js` as an entry, all you'd need to do there is:
