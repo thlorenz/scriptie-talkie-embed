@@ -35,7 +35,7 @@ your bundle.
 So lets assume you have a build script that specifies `main.js` as an entry, all you'd need to do there is:
 
 ```js
-var scriptieTalkieEmbed = require('scriptie-talkie');
+var scriptieTalkieEmbed = require('scriptie-talkie-embed');
 scriptieTalkieEmbed();
 ```
 
