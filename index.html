@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Scriptie-talkie-embed : Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Scriptie-talkie-embed</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/thlorenz/scriptie-talkie-embed">View on GitHub</a>
+
+          <h1 id="project_title">Scriptie-talkie-embed</h1>
+          <h2 id="project_tagline">Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/thlorenz/scriptie-talkie-embed/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/thlorenz/scriptie-talkie-embed/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>scriptie-talkie-embed</h1>
+
+<p>Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.</p>
+
+<h2>How does this work</h2>
+
+<p>A good idea is to look at the <a href="https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog">example
+implementation</a> and to <a href="http://thlorenz.github.io/scriptie-talkie-embed/">see the resulting
+page</a>.</p>
+
+<p>Getting this to work comes down to a few single steps.</p>
+
+<h3>Include code inside html</h3>
+
+<p>Any <code>textarea</code> with class <code>scriptie-talkie</code> will be converted into a scriptie-talkie, so this is the minimum you need:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"scriptie-talkie"</span><span class="nt">&gt;</span>
+  var o = Object.create({a : 1})
+  o.a = 2;
+  Object.freeze(o)
+  o.a = 1; 
+  o
+<span class="nt">&lt;/textarea&gt;</span>
+</pre></div>
+
+<h3>Activate scriptie-talkie</h3>
+
+<p>At this point you will need <a href="https://github.com/substack/node-browserify">browserify</a> in order to include scriptie-talkie in
+your bundle.</p>
+
+<p>So lets assume you have a build script that specifies <code>main.js</code> as an entry, all you'd need to do there is:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">scriptieTalkieEmbed</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'scriptie-talkie'</span><span class="p">);</span>
+<span class="nx">scriptieTalkieEmbed</span><span class="p">();</span>
+</pre></div>
+
+<p>Make sure to execute the last line only once the page has loaded or just include the bundle at the bottom of your script
+as in the example I mentioned above.</p>
+
+<p>It will then go and convert all your customized <code>textarea</code>s into scriptie-talkies.</p>
+
+<h3>Customize each scriptie-talkie</h3>
+
+<p>Customization is done via a <code>data-scriptie-talkie</code> property that may be added to each <code>textarea</code>.</p>
+
+<p>So far only the following is supported: <code>{ sizeToEditor: true|false }</code>, the default being false. Lets look at the above
+example again and this time add this customization:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"scriptie-talkie"</span> <span class="na">data-scriptie-talkie=</span><span class="s">'{ sizeToEditor: true }'</span><span class="nt">&gt;</span>
+  var o = Object.create({a : 1})
+  o.a = 2;
+  Object.freeze(o)
+  o.a = 1; 
+  o
+<span class="nt">&lt;/textarea&gt;</span>
+</pre></div>
+
+<p>As you can see the config gets passed as a plain JavasScript object literal.</p>
+
+<h2>Future Features</h2>
+
+<p>More config options, particularly related to the sizing of the embedded scriptie-talkie.</p>
+
+<div class="highlight"><pre><span class="p">{</span> <span class="nx">readonly</span>  <span class="o">:</span>  <span class="kc">true</span><span class="o">|</span><span class="kc">false</span>
+<span class="p">,</span> <span class="nx">width</span>     <span class="o">:</span>  <span class="nx">override</span>
+<span class="p">,</span> <span class="nx">height</span>    <span class="o">:</span>  <span class="nx">override</span>
+<span class="p">,</span> <span class="nx">maxheight</span> <span class="o">:</span>  <span class="nx">override</span>
+<span class="p">}</span>
+</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Scriptie-talkie-embed maintained by <a href="https://github.com/thlorenz">thlorenz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-40127243-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
