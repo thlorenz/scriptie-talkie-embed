@@ -5,8 +5,10 @@ Embeds scriptie-talkie in any html page, for instance blog posts, to provide int
 ## How does this work
 
 A good idea is to look at the [example
-implementation](https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog), but it comes down to a few
-single steps.
+implementation](https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog) and to [see the resulting
+page](http://thlorenz.github.io/scriptie-talkie-embed/).
+
+Getting this to work comes down to a few single steps.
 
 ### Include code inside html
 
@@ -48,7 +50,7 @@ So far only the following is supported: `{ sizeToEditor: true|false }`, the defa
 example again and this time add this customization:
 
 ```html
-<textarea class="scriptie-talkie" data-scriptie-talkie='{ sizeToEditor: true }`>
+<textarea class="scriptie-talkie" data-scriptie-talkie='{ sizeToEditor: true }'>
   var o = Object.create({a : 1})
   o.a = 2;
   Object.freeze(o)
