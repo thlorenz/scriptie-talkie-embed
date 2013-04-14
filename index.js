@@ -2,7 +2,7 @@
 
 var debounce        =  require('debounce')
   , loadAce         =  require('./lib/load-ace')
-  , normalizeIndent =  require('./lib/normalize-indent')
+  , prepareTextarea =  require('./lib/prepare-textarea')
   , createContainer =  require('./lib/create-container')
   , createEditor    =  require('./lib/create-editor')
   , createTerminal  =  require('./lib/create-terminal')
@@ -12,23 +12,26 @@ var debounce        =  require('debounce')
 function harvest(scripties) {
   var res = []
     , len = scripties.length
-    , el;
+    , textarea
+    , src;
   for (var i = 0; i < len; i++) {
-    el = scripties.item(i);
-    res.push({ el: el, src: normalizeIndent(el.textContent) });
+    textarea = scripties.item(i);
+    res.push(textarea);
   }
   return res;
 }
 
 
-function talkify(scripties) {
-  scripties.forEach(function(scriptie, idx) {
+function talkify(textareas) {
+  textareas.forEach(function(textarea, idx) {
 
-    var container         =  createContainer(scriptie.el);
+    prepareTextarea(textarea, -3);
+
+    var container         =  createContainer(textarea);
     var term              =  createTerminal(container, 'scriptie-talkie-terminal-' + idx)
       , terminal          =  term.terminal
       , terminalContainer =  term.container;
-    var edit              =  createEditor(container, scriptie.src, 'scriptie-talkie-ace-editor-' + idx)
+    var edit              =  createEditor(container, textarea.textContent, 'scriptie-talkie-ace-editor-' + idx)
       , editor            =  edit.editor
       , editorContainer   =  edit.container;
 
@@ -44,9 +47,9 @@ function talkify(scripties) {
 
 module.exports = function () {
   var wantScripties = document.getElementsByClassName('scriptie-talkie');
-  var scripties = harvest(wantScripties);
-  if (!scripties.length) return;
+  var textareas = harvest(wantScripties);
+  if (!textareas.length) return;
 
   // only load ace editor if we found elements in the page that want to talk
-  loadAce(talkify.bind(null, scripties));
+  loadAce(talkify.bind(null, textareas));
 };
