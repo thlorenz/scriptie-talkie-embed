@@ -7,6 +7,7 @@ var debounce        =  require('debounce')
   , createEditor    =  require('./lib/create-editor')
   , createTerminal  =  require('./lib/create-terminal')
   , evaluateScript  =  require('./lib/evaluate-script')
+  , loadStyles      =  require('./lib/load-styles')
   ;
 
 function harvest(scripties) {
@@ -23,6 +24,7 @@ function harvest(scripties) {
 
 
 function talkify(textareas) {
+  loadStyles();
   textareas.forEach(function(textarea, idx) {
 
     prepareTextarea(textarea, -3);
