@@ -29,10 +29,7 @@ function harvest(scripties) {
 function sizeTerminalToRowsAndAdjust(container, lines) {
   var evaluatedLines = evaluateScript(lines.join('\n'));
 
-  // tweaking a bit since for larger row numbers terminal wasn't big enough
-  // TODO: this tweak isn't working perfectly at all times
-  var rows = Math.round(evaluatedLines.length * 1.25 + 2);
-  var term = createTerminal(container, { rows: rows });
+  var term = createTerminal(container, { lines: evaluatedLines });
   container.style.height = term.height + 'px';
   return term;
 }
