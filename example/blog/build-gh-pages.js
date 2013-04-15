@@ -18,5 +18,5 @@ browserify()
   .bundle(function (err, src) {
     if (err) return console.error(err);
     var minified = minify(src);
-    fs.writeFileSync(path.join(__dirname, '../../.gh-pages', 'bundle.js'), minified);
+    fs.writeFileSync(path.join(__dirname, '../../gh-pages', 'bundle.js'), minified);
   });
