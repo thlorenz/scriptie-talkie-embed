@@ -8,10 +8,10 @@
 <body>
 
   <div class="wrapper">
-    <h2>scriptie-talkie-embed blog post example</h2>
+    <h2>blog post example</h2>
     <a href="https://github.com/thlorenz/scriptie-talkie-embed/tree/master/example/blog">source of this example</a>
 
-    <p>Use it to demonstrate interesting aspects of JavaScript, i.e. <code>Object.freeze</code></p>
+    <p>Use it to demonstrate interesting aspects of JavaScript, i.e. <code>Object.freeze</code>:</p>
     <textarea class="scriptie-talkie">
       var o = Object.create({a : 1})
       o.a = 2;
@@ -20,58 +20,18 @@
       o
     </textarea>
 
-    <p>By default the size will be determined to make the terminal (on the right side) fit as much of its contents as possible</p>
-    <textarea class="scriptie-talkie">
-      var a = 3
-        , b = 2;
-
-      var c = ++a + b;
-
-      var d = 3
-        , e = 2;
-
-      var f = ++d + e;
-
-      var d = 3
-        , e = 2;
-
-      var f = d++ + e; 
-
-      function foo() {
-        return a + b + c + d + e + f;
-      }
-
-      var z = foo();
-      z++;
-    </textarea>
-
+    <p>By default the size will be determined to make the terminal (on the right side) fit all of its contents.</p>
     <p>
       However you may also size it to just fit the editor on the left by setting the <code>data-scriptie-talkie</code> 
       attribute to <code>{ sizeToEditor: true }</code>.
-      Readers can scroll the terminal up and down with the mouse and edit the code to experiment with it.
     </p>
+    <p>Readers can scroll the terminal up and down with the mouse and edit the code inside the editor to experiment with it.</p>
     <textarea class="scriptie-talkie" data-scriptie-talkie="{ sizeToEditor: true }">
-      var a = 3
-        , b = 2;
-
-      var c = ++a + b;
-
-      var d = 3
-        , e = 2;
-
-      var f = ++d + e;
-
-      var d = 3
-        , e = 2;
-
-      var f = d++ + e; 
-
-      function foo() {
-        return a + b + c + d + e + f;
-      }
-
-      var z = foo();
-      z++;
+      var o = Object.create({a : 1})
+      o.a = 2;
+      Object.freeze(o)
+      o.a = 1; 
+      o
     </textarea>
 
   </div>
