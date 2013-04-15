@@ -7,8 +7,10 @@ var debounce          =  require('debounce')
   , createContainer   =  require('./lib/create-container')
   , createEditor      =  require('./lib/create-editor')
   , createTerminal    =  require('./lib/create-terminal')
+  , createLink        =  require('./lib/create-link')
   , evaluateScript    =  require('./lib/evaluate-script')
   , loadStyles        =  require('./lib/load-styles')
+  , linkTo            =  require('./lib/link-to')
   ;
 
 function harvest(scripties) {
@@ -23,6 +25,7 @@ function harvest(scripties) {
   return res;
 }
 
+
 function sizeTerminalToRowsAndAdjust(container, lines) {
   var evaluatedLines = evaluateScript(lines.join('\n'));
 
@@ -30,10 +33,6 @@ function sizeTerminalToRowsAndAdjust(container, lines) {
   // TODO: this tweak isn't working perfectly at all times
   var rows = Math.round(evaluatedLines.length * 1.25 + 2);
   var term = createTerminal(container, { rows: rows });
-  console.log('evaluatedLines.length: ', evaluatedLines.length);
-  
-  console.log('rows: ', rows);
-  
   container.style.height = term.height + 'px';
   return term;
 }
@@ -45,13 +44,8 @@ function talkify(textareas) {
     var lines     =  prepareTextarea(textarea, -3)
       , config    =  getTextareaConfig(textarea)
       , container =  createContainer(textarea)
+      , link      =  createLink(container)
       , term;
-
-    //  FUTURE: extra config
-    //  readonly  :  true|false
-    //  width     :  override
-    //  height    :  override
-    //  maxheight :  override
 
     if (!config.sizeToEditor) {
       term = sizeTerminalToRowsAndAdjust(container, lines);
@@ -64,8 +58,10 @@ function talkify(textareas) {
       , editor   =  edit.editor;
 
     function evaluate() {
+      var code = editor.getValue();
       terminal.reset();
-      evaluateScript(editor.getValue(), terminal.writeln.bind(terminal));
+      link.setAttribute('href', linkTo(code));
+      evaluateScript(code, terminal.writeln.bind(terminal));
     }
     
     editor.on('change', debounce(evaluate, 400, false));
