@@ -1,7 +1,6 @@
 'use strict';
 
 var debounce          =  require('debounce')
-  , loadAce           =  require('./lib/load-ace')
   , getTextareaConfig =  require('./lib/get-textarea-config')
   , prepareTextarea   =  require('./lib/prepare-textarea')
   , createContainer   =  require('./lib/create-container')
@@ -75,8 +74,7 @@ module.exports = function () {
   var textareas = harvest(wantScripties);
   if (!textareas.length) return;
 
-  // only load ace editor if we found elements in the page that want to talk
-  loadAce(talkify.bind(null, textareas));
+  talkify(textareas);
 };
 
 // For all the people who are still not using browserify
