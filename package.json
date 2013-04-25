@@ -14,8 +14,8 @@
   "dependencies": {
     "debounce": "0.0.2",
     "hypernal": "~0.1.1",
-    "scriptie-talkie": "~0.4.0",
-    "brace": "~0.1.2"
+    "brace": "~0.1.2",
+    "scriptie-talkie": "~0.4.3"
   },
   "devDependencies": {
     "tape": "~0.3.3",
