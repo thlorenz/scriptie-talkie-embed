@@ -63,9 +63,6 @@ function talkify(textareas) {
     editor.on('change', debounce(evaluate, 400, false));
     editor.clearSelection();
     evaluate();
-
-    // scroll to top
-    terminal.term.scrollDisp(-9999);
   });
 }
 
