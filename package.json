@@ -1,6 +1,6 @@
 {
   "name": "scriptie-talkie-embed",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Embeds scriptie-talkie in any html page, for instance blog posts, to provide interactive code samples.",
   "main": "scriptie-talkie-embed.js",
   "scripts": {
