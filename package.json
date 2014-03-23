@@ -13,9 +13,9 @@
   "homepage": "https://github.com/thlorenz/scriptie-talkie-embed",
   "dependencies": {
     "debounce": "0.0.2",
-    "brace": "~0.1.2",
     "hypernal": "~0.2.2",
-    "scriptie-talkie": "~0.4.4"
+    "scriptie-talkie": "~0.4.4",
+    "brace": "~0.2.1"
   },
   "devDependencies": {
     "tape": "~0.3.3",
